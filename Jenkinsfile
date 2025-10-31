@@ -20,6 +20,7 @@ pipeline {
                 script {
                     sh """
                         echo 'Hello Building..'
+                        sleep 10
                         env   
                     """
                 }
