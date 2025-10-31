@@ -1,4 +1,5 @@
 pipeline {
+// PRE-Build Session
     agent node {
         label 'AGENT-1'
     }
@@ -13,7 +14,7 @@ pipeline {
         disableConcurrentBuilds() // Parallel gha Trigger jaraga kunda Prodution lo, we are giving Disable option.
     }
 
-// Build
+// Build Session
     stages {
         stage('Build') {
             steps {
