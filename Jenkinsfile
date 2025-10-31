@@ -14,7 +14,7 @@ pipeline {
         disableConcurrentBuilds() // Parallel gha Trigger jaraga kunda Prodution lo, we are giving Disable option.
     }
 
-    parameters {
+    parameters { // 1st-time parameters telidu dhaniki jenkins, 2nd time excute inappudu chupistumdhi. okkasari excute ite ghani telidu. Parameters Use chestunnaru ani. 
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
         booleanParam(name: 'TOGGLE', defaultValue: true, description: 'Toggle this value')
@@ -31,7 +31,7 @@ pipeline {
                         echo 'Hello Building..'
                         sleep 10
                         env   
-                        echo "Hello ${params.PERSON}"
+                        echo "Hello ${params.PERSON}"  
                     """
                 }
             }
