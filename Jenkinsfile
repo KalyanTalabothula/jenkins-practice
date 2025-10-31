@@ -9,7 +9,7 @@ pipeline {
 
     options {
         // Timeout counter starts AFTER agent is allocated, Within this time-line not Excuted then it is stopped. 
-        timeout(time: 10, unit: 'SECONDS')
+        timeout(time: 30, unit: 'MINUTES') // this enough normally for microservices
     }
 
 // Build
@@ -19,7 +19,6 @@ pipeline {
                 script {
                     sh """
                         echo 'Hello Building..'
-                        sleep 10
                         env   
                     """
                 }
