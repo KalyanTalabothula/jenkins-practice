@@ -2,12 +2,25 @@ pipeline {
     agent node {
         label 'AGENT-1'
     }
+
+    environment {  // just like Docker, k8s laga ney Key:Value pair
+        COURSE = 'jenkins'
+    }
+
+    options {
+        // Timeout counter starts AFTER agent is allocated, Within this time-line not Excuted then it is stopped. 
+        timeout(time: 1, unit: 'SECONDS')
+    }
+
 // Build
     stages {
         stage('Build') {
             steps {
                 script {
-                    echo 'Building..'
+                    sh """
+                        echo 'Hello Building..'
+                        env   
+                    """
                 }
             }
         }
