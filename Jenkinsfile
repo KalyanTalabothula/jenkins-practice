@@ -30,10 +30,12 @@ pipeline {
 
         success { 
             echo ' Hello success!'
+            // if success, then fine. we will get this message.
         }
 
         failure { 
             echo ' Hello failure!'
+            // In case if it fail, we can trigger the slack, email .. 
         }
     }
 }
