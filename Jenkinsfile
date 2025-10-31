@@ -10,6 +10,7 @@ pipeline {
     options {
         // Timeout counter starts AFTER agent is allocated, Within this time-line not Excuted then it is stopped. 
         timeout(time: 30, unit: 'MINUTES') // this enough normally for microservices
+        disableConcurrentBuilds() // Parallel gha Trigger jaraga kunda Prodution lo, we are giving Disable option.
     }
 
 // Build
